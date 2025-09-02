@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Health App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="#" onclick="showTab('home')">Home</a></li>
+      <li><a href="#" onclick="showTab('health')">Health</a></li>
+      <li><a href="#" onclick="showTab('tools')">Tools</a></li>
+      <li><a href="#" onclick="showTab('phs')">PHS</a></li>
+      <li><a href="#" onclick="showTab('dashboard')">Dashboard</a></li>
+      <li><a href="#" onclick="showTab('contact')">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Home Tab -->
+  <div id="home" class="tab-content">
+    <h2>Welcome to the Health App</h2>
+    <p>Select a topic from the sidebar to learn more:</p>
+
+    <div class="home-layout">
+      <!-- Sidebar with cards -->
+      <aside class="sidebar">
+        <div class="card-health" onclick="showHomeInfo('nutrition')">Balanced Nutrition</div>
+        <div class="card-health" onclick="showHomeInfo('hygiene')">Hygiene & Sanitation</div>
+        <div class="card-health" onclick="showHomeInfo('waste')">Waste Management</div>
+        <div class="card-health" onclick="showHomeInfo('diseases')">Common Diseases</div>
+        <div class="card-health" onclick="showHomeInfo('water')">Water Quality</div>
+        <div class="card-health" onclick="showHomeInfo('meat')">Meat & Animals</div>
+        <div class="card-health" onclick="showHomeInfo('climate')">Climate Change</div>
+        <div class="card-health" onclick="showHomeInfo('disaster')">Disaster Management</div>
+      </aside>
+
+      <!-- Content display area -->
+      <div id="homeInfo" class="info-box">
+        <p>YOUR HEALTH IS OUR PRIORITY</p>
+        <p>Click on the topics to learn more about maintaining good health and preventing diseases.</p>
+        <div class="grid">
+          <div class="card">
+            <img class="photo" src="media/HOi-generated-8846860_640.jpg" alt="home picture">
+            <img class="photo" src="media/ai-generated-8643329_640.png" alt="home picture">
+          </div>
+          <div class="card">
+            <img class="photo" src="media/HOi-generated-8846860_640.jpg" alt="home picture">
+            <img class="photo" src="media/ai-generated-8643329_640.png" alt="home picture">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Health Tab -->
+  <div id="health" class="tab-content" style="display:none;">
+    <h2>General Health Information</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Practice proper hand hygiene</h3>
+        <p>These Include:</p>
+        <ul>
+          <li>Washing hands with soap and water.</li>
+          <li>Using hand sanitizer when soap is unavailable.</li>
+          <li>Keeping nails trimmed and clean.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Control and prevent malaria through treated nets</h3>
+        <p>Key Practices:</p>
+        <ul>
+          <li>Use insecticide-treated bed nets.</li>
+          <li>Indoor spraying with insecticides.</li>
+          <li>Eliminate standing water to reduce mosquito breeding.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Vaccination protects against deadly diseases</h3>
+        <p>Key Practices:</p>
+        <p>There are so many vaccines available to protect against various diseases.</p>
+        <ul>
+          <li>BCG vaccine protects against tuberculosis.</li>
+          <li>Measles vaccine protects against measles.</li>
+          <li>Polio vaccine protects against poliomyelitis.</li>
+          <li>Hepatitis B vaccine protects against hepatitis B.</li>
+          <li>Ensure all vaccinations are up to date.</li>
+          <li>Educate communities about the benefits of vaccination.</li>
+          <li>Implement outreach programs to increase vaccination coverage.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Balanced diet ensures growth and recovery</h3>
+        <p>Key Practices:</p>
+        <ul>
+          <li>Include a variety of fruits and vegetables in the diet.</li>
+          <li>Ensure adequate protein intake from sources like beans, nuts, and meat.</li>
+          <li>Stay hydrated by drinking enough water throughout the day.</li>
+        </ul>
+        <p>How do these foods ensure growth and recovery?</p>
+        <ul>
+          <li>Fruits and vegetables provide essential vitamins and minerals.</li>
+          <li>Protein is crucial for building and repairing tissues.</li>
+          <li>Staying hydrated helps maintain overall bodily functions.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tools Tab -->
+  <div id="tools" class="tab-content" style="display:none;">
+    <h2>Health Tools</h2>
+    <p>These are the main tools and forms used in collecting, storage and analysis of health data</p>
+    <p>They include various forms and questionnaires designed to capture essential health information.</p>
+    
+    <div class="form-samples">
+      <div class="sampling">
+        <h3>Sampling Form</h3>
+        <p>This form is used in collecting of samples</p>
+      </div>
+      <div class="seazure">
+        <h3>Seizure Form</h3>
+        <p>This form is used in condemning a consignment</p>
+      </div>
+    </div>
+
+    <div class="form-buttons">
+      <button onclick="showForm('patientForm')">Patient Form</button>
+      <button onclick="showForm('bfciForm')">BFCI</button>
+      <button onclick="showForm('mchForm')">MCH</button>
+      <button onclick="showForm('surveillanceForm')">Surveillance</button>
+    </div>
+
+    <div class="form-descriptions">
+      <div id="patientFormDesc" class="form-desc">
+        <p>This is a type of a form that collects patient information. This form is used to gather essential details about patients for better healthcare delivery.</p>
+      </div>
+      <div id="bfciFormDesc" class="form-desc">
+        <p>This is a type of a form that collects data on breastfeeding practices and child nutrition. This form is used to gather information about infant feeding practices, growth monitoring, and maternal counseling.</p>
+      </div>
+      <div id="mchFormDesc" class="form-desc">
+        <p>This is a type of a form that collects data on maternal and child health. This form is used to gather information about prenatal care, childbirth, and postnatal care.</p>
+      </div>
+      <div id="surveillanceFormDesc" class="form-desc">
+        <p>This is a type of a form that collects data on disease surveillance and outbreak response. This form is used to gather information about disease cases, contacts, and control measures.</p>
+      </div>
+    </div>
+
+    <!-- Form Containers -->
+    <div id="patientForm" class="form-container" style="display:none;">
+      <h3>Patient Form</h3>
+      <form id="patientData">
+        <input type="text" placeholder="Patient Name" required>
+        <select required>
+          <option value="">Select Gender</option>
+          <option>Male</option>
+          <option>Female</option>
+          <option>Other</option>
+        </select>
+        <input type="number" placeholder="Age" required>
+        <input type="text" placeholder="Residence" required>
+        <input type="text" placeholder="Phone Number" required>
+        <input type="email" placeholder="Email" required>
+        <input type="text" placeholder="Occupation" required>
+        <input type="text" placeholder="Marital Status" required>
+        <input type="text" placeholder="Diagnosis" required>
+        <input type="text" placeholder="Treatment" required>
+        <input type="text" placeholder="Discharge Details" required>
+        <button type="button" onclick="addEntry('patientData')">Add</button>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+    <div id="bfciForm" class="form-container" style="display:none;">
+      <h3>BFCI Form</h3>
+      <form id="bfciData">
+        <input type="text" placeholder="Mother's Name" required>
+        <input type="text" placeholder="Child's Name" required>
+        <label>Date of Birth</label>
+        <input type="date" required>
+        <input type="number" placeholder="Age (months)" required>
+        <input type="text" placeholder="Weight (kg)" required>
+        <input type="text" placeholder="Height (cm)" required>
+        <input type="text" placeholder="Immunization Status" required>
+        <label for="feeding">Feeding Practices:</label>
+        <select id="feeding" required>
+          <option value="">Select Feeding Practice</option>
+          <option>Exclusive Breastfeeding</option>
+          <option>Partial Breastfeeding</option>
+          <option>Formula Feeding</option>
+        </select>
+        <label for="growth">Growth Monitoring:</label>
+        <select id="growth" required>
+          <option value="">Select Growth Monitoring Status</option>
+          <option>Normal</option>
+          <option>Underweight</option>
+          <option>Overweight</option>
+        </select>
+        <label for="counseling">Counseling Provided:</label>
+        <select id="counseling" required>
+          <option value="">Select Counseling Status</option>
+          <option>Yes</option>
+          <option>No</option>
+        </select>
+        <input type="text" placeholder="Counseling Details" required>
+        <input type="text" placeholder="Notes" required>
+        <button type="button" onclick="addEntry('bfciData')">Add</button>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+    <div id="mchForm" class="form-container" style="display:none;">
+      <h3>MCH Form</h3>
+      <form id="mchData">
+        <input type="text" placeholder="Mother's Name" required>
+        <label for="mchDate">Date of Visit</label>
+        <input type="date" id="mchDate" required>
+        <label>Gravida/Parity</label>
+        <input type="text" placeholder="Gravida/Parity" required>
+        <label>Gestational Age</label>
+        <input type="text" placeholder="Gestational Age" required>
+        <label>Visit Reason</label>
+        <input type="text" placeholder="Visit Reason" required>
+        <label for="ChildName">Child's Name</label>
+        <input type="text" id="ChildName" placeholder="Child's Name" required>
+        <label for="weightAtBirth">Weight at Birth</label>
+        <input type="text" id="weightAtBirth" placeholder="Weight at Birth" required>
+        <label>Clinical Findings</label>
+        <input type="text" placeholder="Clinical Findings" required>
+        <button type="button" onclick="addEntry('mchData')">Add</button>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+    <div id="surveillanceForm" class="form-container" style="display:none;">
+      <h3>Surveillance Form</h3>
+      <form id="survData">
+        <input type="text" placeholder="Reporting Officer" required>
+        <input type="text" placeholder="Disease Suspected" required>
+        <input type="date" required>
+        <input type="text" placeholder="Number of Cases" required>
+        <input type="text" placeholder="Number of Deaths" required>
+        <input type="text" placeholder="Location" required>
+        <input type="text" placeholder="Notes">
+        <button type="button" onclick="addEntry('survData')">Add</button>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- PHS Tab -->
+  <div id="phs" class="tab-content" style="display:none;">
+    <h2>Public Health Services</h2>
+
+    <!-- Public Health Overview Section -->
+    <section class="public-health-section">
+      <h2>Public Health Overview</h2>
+      <div class="public-health-grid">
+        <div class="ph-card" id="definition">
+          <h3>Definition</h3>
+          <p>Public health is the science and practice of preventing disease, prolonging life, and promoting health through organized community efforts.</p>
+        </div>
+        <div class="ph-card" id="pillars">
+          <h3>Key Pillars</h3>
+          <ul>
+            <li>Disease prevention</li>
+            <li>Health promotion</li>
+            <li>Health protection</li>
+            <li>Policy and planning</li>
+            <li>Research and evidence-based practice</li>
+          </ul>
+        </div>
+        <div class="ph-card" id="functions">
+          <h3>Core Functions</h3>
+          <ul>
+            <li>Assessment: monitoring community health status</li>
+            <li>Policy development: creating strategies to address health needs</li>
+            <li>Assurance: ensuring health services are provided and accessible</li>
+          </ul>
+        </div>
+        <div class="ph-card" id="disciplines">
+          <h3>Major Disciplines</h3>
+          <ul>
+            <li>Epidemiology</li>
+            <li>Biostatistics</li>
+            <li>Environmental health</li>
+            <li>Health policy and management</li>
+            <li>Social and behavioral sciences</li>
+          </ul>
+        </div>
+        <div class="ph-card" id="importance">
+          <h3>Importance</h3>
+          <p>Public health improves quality of life, increases life expectancy, reduces health disparities, and prepares communities for emerging health threats.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="phs-buttons">
+      <button onclick="showForm('idsrForm')">IDSR</button>
+      <button onclick="showForm('immForm')">Immunization</button>
+      <button onclick="showForm('occForm')">Occupational Health</button>
+    </div>
+
+    <!-- IDSR Form -->
+    <div id="idsrForm" class="form-container" style="display:none;">
+      <h3>IDSR Reporting</h3>
+      
+      <!-- IDSR Notes Section -->
+      <section class="idsr-section">
+        <h2>IDSR Notes</h2>
+        <div class="idsr-grid">
+          <div class="idsr-card" id="idsr-definition">
+            <h3>Definition</h3>
+            <p>IDSR is a strategy adopted by WHO/AFRO to strengthen public health surveillance and response systems in Africa.</p>
+          </div>
+          <div class="idsr-card" id="idsr-objectives">
+            <h3>Main Objectives</h3>
+            <ul>
+              <li>Detect and respond quickly to disease outbreaks.</li>
+              <li>Improve data collection, analysis, and reporting.</li>
+              <li>Strengthen laboratory support for public health surveillance.</li>
+              <li>Integrate multiple disease surveillance systems.</li>
+              <li>Promote evidence-based public health action.</li>
+            </ul>
+          </div>
+          <div class="idsr-card" id="idsr-core-functions">
+            <h3>Core Functions</h3>
+            <ul>
+              <li>Case detection and registration</li>
+              <li>Case confirmation</li>
+              <li>Reporting</li>
+              <li>Data analysis and interpretation</li>
+              <li>Preparedness and response</li>
+              <li>Feedback and communication</li>
+              <li>Monitoring and evaluation</li>
+            </ul>
+          </div>
+          <div class="idsr-card" id="idsr-diseases">
+            <h3>Priority Diseases</h3>
+            <p>Examples include:</p>
+            <ul>
+              <li>Cholera</li>
+              <li>Measles</li>
+              <li>Meningitis</li>
+              <li>Polio</li>
+              <li>Yellow Fever</li>
+              <li>Ebola and other Viral Hemorrhagic Fevers</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <form id="idsrData">
+        <input type="text" placeholder="Reporting Officer" required>
+        <input type="text" placeholder="Area" required>
+        <input type="text" placeholder="Health Facility" required>
+        <input type="text" placeholder="District" required>
+        <input type="text" placeholder="Region" required>
+        <input type="date" required>
+        <input type="text" placeholder="Disease Name" required>
+        <input type="text" placeholder="Number of Cases" required>
+        <input type="text" placeholder="Number of Deaths" required>
+        <input type="text" placeholder="control measures">
+        <button type="button" onclick="addEntry('idsrData')">Add</button>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+    <!-- Immunization Form -->
+    <div id="immForm" class="form-container" style="display:none;">
+      <h3>Immunization Data</h3>
+
+      <!-- Immunization Notes Section -->
+      <section class="immunization-section">
+        <h2>Immunization Notes</h2>
+        <div class="immunization-grid">
+          <div class="immunization-card" id="bcg">
+            <h3>BCG Vaccine</h3>
+            <p><strong>Disease prevented:</strong> Tuberculosis</p>
+            <p><strong>Age of administration:</strong> At birth</p>
+            <p><strong>Injection site:</strong> Left upper arm (intradermal)</p>
+            <p><strong>Certificate duration:</strong> Lifelong</p>
+          </div>
+          <div class="immunization-card" id="dpt">
+            <h3>DPT Vaccine</h3>
+            <p><strong>Disease prevented:</strong> Diphtheria, Pertussis, Tetanus</p>
+            <p><strong>Age of administration:</strong> 6, 10, 14 weeks</p>
+            <p><strong>Injection site:</strong> Thigh (intramuscular)</p>
+            <p><strong>Certificate duration:</strong> 10 years (Tetanus booster needed)</p>
+          </div>
+          <div class="immunization-card" id="measles">
+            <h3>Measles Vaccine</h3>
+            <p><strong>Disease prevented:</strong> Measles</p>
+            <p><strong>Age of administration:</strong> 9 months and 18 months</p>
+            <p><strong>Injection site:</strong> Right upper arm (subcutaneous)</p>
+            <p><strong>Certificate duration:</strong> Lifelong</p>
+          </div>
+          <div class="immunization-card" id="yellow-fever">
+            <h3>Yellow Fever Vaccine</h3>
+            <p><strong>Disease prevented:</strong> Yellow Fever</p>
+            <p><strong>Age of administration:</strong> 9 months</p>
+            <p><strong>Injection site:</strong> Left upper arm (subcutaneous)</p>
+            <p><strong>Certificate duration:</strong> 10 years</p>
+          </div>
+        </div>
+      </section>
+
+      <form id="immData">
+        <label>Date of Visit</label>
+        <input type="date" required>
+        <input type="text" placeholder="Child's Name" required>
+        <input type="text" placeholder="Serial Number" required>
+        <input type="text" placeholder="Mother's Name" required>
+        <label for="dateOfBirth">Date of Birth</label>
+        <input type="date" id="dateOfBirth" required>
+
+        <h3>Vaccines Administered</h3>
+        <div class="vaccine-grid">
+          <div class="vaccine-item">
+            <input type="checkbox" id="bcgVax" name="bcg">
+            <label for="bcgVax">BCG</label>
+            <input type="date" name="bcg_date">
+          </div>
+          <div class="vaccine-item">
+            <input type="checkbox" id="opv0" name="opv0">
+            <label for="opv0">OPV 0</label>
+            <input type="date" name="opv0_date">
+          </div>
+          <div class="vaccine-item">
+            <input type="checkbox" id="opv1" name="opv1">
+            <label for="opv1">OPV 1</label>
+            <input type="date" name="opv1_date">
+          </div>
+          <div class="vaccine-item">
+            <input type="checkbox" id="opv2" name="opv2">
+            <label for="opv2">OPV 2</label>
+            <input type="date" name="opv2_date">
+          </div>
+          <div class="vaccine-item">
+            <input type="checkbox" id="opv3" name="opv3">
+            <label for="opv3">OPV 3</label>
+            <input type="date" name="opv3_date">
+          </div>
+          <div class="vaccine-item">
+            <input type="checkbox" id="dpt1" name="dpt1">
+            <label for="dpt1">DPT 1</label>
+            <input type="date" name="dpt1_date">
+          </div>
+          <div class="vaccine-item">
+            <input type="checkbox" id="dpt2" name="dpt2">
+            <label for="dpt2">DPT 2</label>
+            <input type="date" name="dpt2_date">
+          </div>
+          <div class="vaccine-item">
+            <input type="checkbox" id="dpt3" name="dpt3">
+            <label for="dpt3">DPT 3</label>
+            <input type="date" name="dpt3_date">
+          </div>
+          <div class="vaccine-item">
+            <input type="checkbox" id="measlesVax" name="measles">
+            <label for="measlesVax">Measles</label>
+            <input type="date" name="measles_date">
+          </div>
+          <div class="vaccine-item">
+            <input type="checkbox" id="pcv" name="pcv">
+            <label for="pcv">PCV</label>
+            <input type="date" name="pcv_date">
+          </div>
+          <div class="vaccine-item">
+            <input type="checkbox" id="rota" name="rota">
+            <label for="rota">Rotavirus</label>
+            <input type="date" name="rota_date">
+          </div>
+          <div class="vaccine-item">
+            <input type="checkbox" id="yellowFeverVax" name="yellow_fever">
+            <label for="yellowFeverVax">Yellow Fever</label>
+            <input type="date" name="yellow_fever_date">
+          </div>
+          <div class="vaccine-item">
+            <input type="checkbox" id="mr" name="mr">
+            <label for="mr">MR (Measles-Rubella)</label>
+            <input type="date" name="mr_date">
+          </div>
+        </div>
+
+        <input type="text" placeholder="Remarks" required>
+        <button type="button" onclick="addEntry('immData')">Add</button>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+    <!-- Occupational Health Form -->
+    <div id="occForm" class="form-container" style="display:none;">
+      <h3>Occupational Health Data</h3>
+
+      <div class="notes-grid">
+        <div class="note-card" id="overview">
+          <h2>Overview</h2>
+          <ul>
+            <li>Occupational health focuses on physical, mental & social well-being of workers.</li>
+            <li>Aims: prevent work-related injuries/illnesses, promote healthy workplaces, fitness for work.</li>
+            <li>Stakeholders: employers, employees, OH professionals, regulators, unions.</li>
+          </ul>
+        </div>
+        <div class="note-card" id="principles">
+          <h2>Core Principles</h2>
+          <ul>
+            <li>Prevention — control hazards before harm occurs.</li>
+            <li>Risk assessment — evaluate hazards & consequences.</li>
+            <li>Hierarchy of controls — prioritize elimination > PPE.</li>
+            <li>Worker involvement — engage staff in safety.</li>
+            <li>Safe workplace — legal and ethical right.</li>
+          </ul>
+        </div>
+        <div class="note-card" id="risk-assessment">
+          <h2>Risk Assessment</h2>
+          <ul>
+            <li>Identify hazards: chemical, physical, biological, ergonomic, psychosocial, safety.</li>
+            <li>Decide who might be harmed & how.</li>
+            <li>Evaluate existing controls.</li>
+            <li>Record findings & act.</li>
+            <li>Review regularly & after changes.</li>
+          </ul>
+        </div>
+        <div class="note-card" id="hierarchy">
+          <h2>Hierarchy of Controls</h2>
+          <ol>
+            <li>Elimination</li>
+            <li>Substitution</li>
+            <li>Engineering controls</li>
+            <li>Administrative controls</li>
+            <li>PPE</li>
+            <li>Training & supervision</li>
+            <li>Health surveillance</li>
+            <li>Emergency preparedness</li>
+          </ol>
+        </div>
+        <div class="note-card" id="hazards">
+          <h2>Workplace Hazards</h2>
+          <ul>
+            <li>Physical: noise, vibration, heat/cold, radiation</li>
+            <li>Chemical: solvents, acids, asbestos, silica</li>
+            <li>Biological: blood-borne pathogens</li>
+            <li>Ergonomic: manual handling, repetitive strain</li>
+            <li>Psychosocial & Safety: stress, burnout, slips, violence</li>
+          </ul>
+        </div>
+        <div class="note-card" id="diseases">
+          <h2>Occupational Diseases</h2>
+          <ul>
+            <li>Occupational asthma</li>
+            <li>COPD (dust/smoke)</li>
+            <li>Noise-induced hearing loss</li>
+            <li>Dermatitis</li>
+            <li>Musculoskeletal disorders</li>
+            <li>Cancers (e.g., mesothelioma)</li>
+            <li>Mental health issues (stress, burnout)</li>
+            <li>Cardiovascular diseases (hypertension, heart disease)</li>
+            <li>Respiratory diseases (asthma, COPD)</li>
+          </ul>
+        </div>
+        <div class="note-card" id="ppe">
+          <h2>PPE</h2>
+          <ul>
+            <li>Must match hazard/task.</li>
+            <li>Fit-tested if required (respirators).</li>
+            <li>Cleaned, maintained, replaced.</li>
+            <li>Not the only control measure.</li>
+            <li>Training on correct use.</li>
+            <li>Regularly inspected & replaced as needed.</li>
+            <li>Inspection records maintained.</li>
+          </ul>
+        </div>
+        <div class="note-card" id="surveillance">
+          <h2>Health Surveillance</h2>
+          <ul>
+            <li>Pre-placement & fitness-for-work exams.</li>
+            <li>Periodic checks (audiometry, spirometry).</li>
+            <li>Incident/illness reporting & investigation.</li>
+            <li>Return-to-work programs.</li>
+          </ul>
+        </div>
+        <div class="note-card" id="legal">
+          <h2>Legal & Ethical</h2>
+          <ul>
+            <li>National OSH laws/regulations.</li>
+            <li>Employer duty of care, worker rights.</li>
+            <li>Record keeping (incidents, exposures).</li>
+            <li>Confidentiality & informed consent.</li>
+          </ul>
+        </div>
+        <div class="note-card" id="emergency">
+          <h2>Emergency Response</h2>
+          <ul>
+            <li>Fire safety & evacuation plans.</li>
+            <li>Spill/chemical exposure response.</li>
+            <li>First aid & trauma readiness.</li>
+            <li>Incident command & communication.</li>
+          </ul>
+        </div>
+        <div class="note-card" id="programs">
+          <h2>Health Promotion in work places</h2>
+          <ul>
+            <li>Wellness: smoking cessation, mental health, fitness.</li>
+            <li>Nutrition & healthy lifestyle education.</li>
+            <li>Physical activity promotion.</li>
+            <li>Chronic disease management.</li>
+            <li>Vaccination programs (flu, hepatitis B).</li>
+            <li>Substance abuse prevention.</li>
+            <li>Ergonomics & posture education.</li>
+            <li>Stress reduction programs.</li>
+            <li>Work-life balance initiatives.</li>
+            <li>Employee assistance programs (EAPs).</li>
+            <li>Injury prevention & safety training.</li>
+            <li>Stress management & work-life balance.</li>
+            <li>Safe work procedures & injury prevention.</li>
+          </ul>
+        </div>
+      </div>
+
+      <form id="occData">
+        <input type="text" placeholder="Workplace Name" required>
+        <input type="text" placeholder="Area" required>
+        <input type="text" placeholder="Hazards Identified" required>
+        <input type="text" placeholder="Incidents Reported" required>
+        <input type="date" required>
+        <input type="text" placeholder="Risk Level" required>
+        <input type="text" placeholder="Safety Measures" required>
+        <button type="button" onclick="addEntry('occData')">Add</button>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+
+
+
+  <div id="dashboard" class="tab-content">
+  <h2>Dashboard</h2>
+
+  <!-- Patients -->
+  <div class="dashboard-section">
+    <h3>Patients</h3>
+    <table id="patientsTable" class="data-table">
+      <thead><tr><th>Name</th><th>Gender</th><th>Diagnosis</th><th>Treatment</th><th>Discharge</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <!-- BFCI -->
+  <div class="dashboard-section">
+    <h3>BFCI Records</h3>
+    <table id="bfciTable" class="data-table">
+      <thead><tr><th>Mother</th><th>Child</th><th>DOB</th><th>Age (months)</th><th>Weight</th><th>Height</th><th>Immunization</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <!-- MCH -->
+  <div class="dashboard-section">
+    <h3>MCH Records</h3>
+    <table id="mchTable" class="data-table">
+      <thead><tr><th>Mother</th><th>Visit Date</th><th>Gestation</th><th>Reason</th><th>Child</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <!-- Surveillance -->
+  <div class="dashboard-section">
+    <h3>Surveillance Reports</h3>
+    <table id="surveillanceTable" class="data-table">
+      <thead><tr><th>Officer</th><th>Disease</th><th>Date</th><th>Cases</th><th>Deaths</th><th>Location</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <!-- IDSR -->
+  <div class="dashboard-section">
+    <h3>IDSR Reports</h3>
+    <table id="idsrTable" class="data-table">
+      <thead><tr><th>Officer</th><th>Disease</th><th>Date</th><th>Cases</th><th>Deaths</th><th>District</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <!-- Immunization -->
+  <div class="dashboard-section">
+    <h3>Immunization Records</h3>
+    <table id="immunizationTable" class="data-table">
+      <thead><tr><th>Child</th><th>Mother</th><th>DOB</th><th>BCG</th><th>OPV0</th><th>OPV1</th><th>Measles</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <!-- Occupational Health -->
+  <div class="dashboard-section">
+    <h3>Occupational Health</h3>
+    <table id="occupationalTable" class="data-table">
+      <thead><tr><th>Workplace</th><th>Area</th><th>Hazards</th><th>Incidents</th><th>Date</th><th>Risk</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+  </div>
+
+
+
+
+
+
+  <!-- Contact Tab -->
+  <div id="contact" class="tab-content" style="display:none;">
+    <h2>Contact Us</h2>
+    <form id="contactForm">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+    <div class="social">
+      <p>Follow us for more health information:</p>
+      <a href="#">Facebook</a> 
+      <a href="#">WhatsApp</a> 
+      <a href="#">Instagram</a> 
+      <a href="#">Telegram</a> 
+      <a href="#">TikTok</a>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
+
+
+  <footer style="background:#0077cc; color:white; text-align:center; padding:10px; margin-top:20px; border-radius:8px;">
+    &copy; 2025 Samson & Tatu . All Rights Reserved. | Afia Health App
+</footer>
+</body>
+</html>
